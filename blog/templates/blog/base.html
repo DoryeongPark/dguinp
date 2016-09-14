@@ -11,20 +11,26 @@
 
 <body>
 
-    <div class="blog-masthead">
-        <div class="container">
-            <nav class="blog-nav">
-                <a class="blog-nav-item active" href="#">Home</a>
-                <a class="blog-nav-item" href="#">C++</a>
-                <a class="blog-nav-item" href="#">Java</a>
-                <a class="blog-nav-item" href="#">C#</a>
-                <a class="blog-nav-item" href="#">Python</a>
-                <a class="blog-nav-item" href="#">Internet Programming Exercises</a>
-            </nav>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Doryeong Park's IT Blog</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">C++</a></li>
+                <li><a href="#">Java</a></li>
+                <li><a href="#">C#</a></li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">Internet Programming Assignments</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Add Post</a></li>
+            </ul>
         </div>
-    </div>
+    </nav>
 
-    <div class="blog-container">
+    <div class="container">
         <div class="row">
             <div class="col-sm-8 blog-main">
                 Main {% block content %}{% endblock %}
