@@ -1,21 +1,45 @@
-h1 a {
-    color: #FCA205;
-    font-family: 'Lobster';
+.blog-masthead {
+    background-color: #428bca;
+    -webkit-box-shadow: inset 0 -2px 5px rgba(0, 0, 0, .1);
+    box-shadow: inset 0 -2px 5px rgba(0, 0, 0, .1);
 }
 
-.page-header {
-    background-color: #333333;
-    margin-top: 0;
-    padding: 20px 20px 20px 40px;
+
+/* Nav links */
+
+.blog-nav-item {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    font-weight: 500;
+    color: #cdddeb;
 }
 
-.page-header h1,
-.page-header h1 a,
-.page-header h1 a:visited,
-.page-header h1 a:active {
-    color: #ffffff;
-    font-size: 36pt;
+.blog-nav-item:hover,
+.blog-nav-item:focus {
+    color: #fff;
     text-decoration: none;
+}
+
+
+/* Active state gets a caret at the bottom */
+
+.blog-nav .active {
+    color: #fff;
+}
+
+.blog-nav .active:after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -5px;
+    vertical-align: middle;
+    content: " ";
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid;
+    border-left: 5px solid transparent;
 }
 
 .content {
@@ -26,7 +50,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: 'Lobster', cursive;
+    font-family: '나눔바른고딕';
 }
 
 .date {

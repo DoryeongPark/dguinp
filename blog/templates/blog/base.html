@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Doryeong Park's Blog</title>
+    <title>Doryeong Park's IT Blog</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -10,13 +10,29 @@
 </head>
 
 <body>
-    <div class="page-header">
-        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        <h1><a href="">Doryeong Park's Blog</a></h1>
+
+    <div class="blog-masthead">
+        <div class="container">
+            <nav class="blog-nav">
+                <a class="blog-nav-item active" href="#">Home</a>
+                <a class="blog-nav-item" href="#">C++</a>
+                <a class="blog-nav-item" href="#">Java</a>
+                <a class="blog-nav-item" href="#">C#</a>
+                <a class="blog-nav-item" href="#">Python</a>
+                <a class="blog-nav-item" href="#">Internet Programming Exercises</a>
+            </nav>
+        </div>
     </div>
-    <div class="content container">
+
+    <div class="blog-container">
         <div class="row">
-            {% block content %}{% endblock %}
+            <div class="col-sm-8 blog-main">
+                Main {% block content %}{% endblock %}
+            </div>
+
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+                SideBar
+            </div>
         </div>
     </div>
 
