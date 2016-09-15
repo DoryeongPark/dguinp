@@ -5,8 +5,8 @@
     <title>Doryeong Park's IT Blog</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    
 </head>
 
 <body>
@@ -18,14 +18,14 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">C++</a></li>
-                <li><a href="#">Java</a></li>
-                <li><a href="#">C#</a></li>
-                <li><a href="#">Python</a></li>
-                <li><a href="#">Internet Programming Assignments</a></li>
+                <li class="inactive"><a href="#">C++</a></li>
+                <li class="inactive"><a href="#">Java</a></li>
+                <li class="inactive"><a href="#">C#</a></li>
+                <li class="inactive"><a href="#">Python</a></li>
+                <li class="inactive"><a href="#">Internet Programming Assignments</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=" {% url "post_new" %} "><span class="glyphicon glyphicon-plus"></span> Add Post</a></li>
+                <li><a href="{% url "post_new" %}"><span class="glyphicon glyphicon-plus"></span> Add Post</a></li>
             </ul>
         </div>
     </nav>
@@ -37,7 +37,7 @@
             </div>
 
             <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-                
+
             </div>
         </div>
     </div>
