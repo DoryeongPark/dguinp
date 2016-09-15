@@ -7,6 +7,16 @@ from .forms import PostForm
 def home(request):
     return render(request, 'blog/home.html')
 
+def cpp_home(request):
+    posts = Post.objects.filter(issue="cpp").order_by('published_date')
+    return render(request, 'blog/cpp_home.html', {'posts' : posts})
+
+def exercise_home(request):
+    return render(request, 'blog/exercise_home.html')
+
+def exercise_1(request):
+    return render(request, 'exercise/exercise1.html')
+
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
@@ -24,7 +34,7 @@ def post_new(request):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            return redirect('post_detail', post.pk)
+            return redirect(' home ')
     else:
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
@@ -44,7 +54,3 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
-#Exercise codes
-def exercise(request, num):
-    path = 'exercise/' + num + '.html';
-    return render(request, path, {});
