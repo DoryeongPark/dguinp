@@ -10,6 +10,9 @@ urlpatterns = [
     # C++
     url(r'^cpp/$', views.cpp_home, name=' cpp_home '),
 
+    # Java
+    url(r'^java/$', views.java_home, name=' java_home '),
+
     # Internet Programming Assignment - List
     url(r'^exercise/$', views.exercise_home, name=' exercise_home '),
 

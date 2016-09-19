@@ -11,6 +11,10 @@ def cpp_home(request):
     posts = Post.objects.filter(issue="cpp").order_by('published_date')
     return render(request, 'blog/cpp_home.html', {'posts' : posts})
 
+def java_home(request):
+    posts = Post.objects.filter(issue="java").order_by('published_date')
+    return render(request, 'blog/java_home.html', {'posts' : posts} )
+
 def exercise_home(request):
     return render(request, 'blog/exercise_home.html')
 

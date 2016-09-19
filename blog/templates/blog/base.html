@@ -17,6 +17,8 @@
 
                 if (~url.indexOf('cpp')) {
                     $("#menu_cpp").addClass("active");
+                } else if (~url.indexOf('java')) {
+                    $("#menu_java").addClass("active");
                 } else if (~url.indexOf('exercise')) {
                     $("#menu_exercise").addClass("active");
                 } else {
@@ -37,7 +39,7 @@
             <ul class="nav navbar-nav">
                 <li id="menu_home"><a href="{% url " home " %}">Home</a></li>
                 <li id="menu_cpp"><a href="{% url " cpp_home " %}">C++</a></li>
-                <li id="menu_java"><a href="#">Java</a></li>
+                <li id="menu_java"><a href="{% url " java_home " %}">Java</a></li>
                 <li id="menu_cs"><a href="#">C#</a></li>
                 <li id="menu_py"><a href="#">Python</a></li>
                 <li id="menu_exercise"><a href="{% url " exercise_home " %}">Internet Programming Assignments</a></li>
