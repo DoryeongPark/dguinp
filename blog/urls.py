@@ -13,6 +13,12 @@ urlpatterns = [
     # Java
     url(r'^java/$', views.java_home, name=' java_home '),
 
+    # C#
+    url(r'^cs/$', views.cs_home, name=' cs_home '),
+
+    # Python
+    url(r'^py/$', views.py_home, name=' py_home '),
+
     # Internet Programming Assignment - List
     url(r'^exercise/$', views.exercise_home, name=' exercise_home '),
 
