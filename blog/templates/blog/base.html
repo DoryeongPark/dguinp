@@ -14,7 +14,6 @@
             window.onload = function() {
 
                 var url = $(location).attr('href');
-
                 if (~url.indexOf('cpp')) {
                     $("#menu_cpp").addClass("active");
                 } else if (~url.indexOf('java')) {
@@ -25,7 +24,7 @@
                     $("#menu_py").addClass("active");
                 } else if (~url.indexOf('exercise')) {
                     $("#menu_exercise").addClass("active");
-                } else {
+                } else if (~url.indexOf('home')) {
                     $("#menu_home").addClass("active");
                 }
             }

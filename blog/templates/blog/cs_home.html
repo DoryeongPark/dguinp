@@ -1,5 +1,18 @@
 {% extends "blog/base.html" %} {% block content %}
-<div class="jumbotron">
-    <h2>준비중입니다!</h2>
-</div>
-{% endblock %}
+
+<h3>C# 프로그래밍 포스트 리스트</h2>
+
+
+<table class="table table-hover">
+    {% for post in posts %}
+    <tr>
+        <div class="list_component">
+            <td><a href="{% url ' post_detail ' pk=post.pk %}">{{ post.name }}</a>
+                <div class="date">
+                    {{ post.published_date }}
+                </div>
+            </td>
+        </div>
+    </tr>
+    {% endfor %}
+</table> {% endblock %}
