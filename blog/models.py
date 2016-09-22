@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
+from django.core.urlresolvers import reverse
 from django_summernote import models as summer_model
 from django_summernote import fields as summer_fields
 
@@ -20,6 +21,10 @@ class Detail(summer_model.Attachment):
 
 class Comment(models.Model):
     post = models.ForeignKey(Detail)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL)
     comment = models.TextField()
+
+    def get_absolute_url(self):
+        return reverse(' post_detail ', args=[self.post_id])
 
 

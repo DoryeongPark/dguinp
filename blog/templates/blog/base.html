@@ -45,9 +45,15 @@
                 <li id="menu_java"><a href="{% url " java_home " %}">Java</a></li>
                 <li id="menu_cs"><a href="{% url " cs_home " %}">C#</a></li>
                 <li id="menu_py"><a href="{% url " py_home " %}">Python</a></li>
-                <li id="menu_exercise"><a href="{% url " exercise_home " %}">Internet Programming Assignments</a></li>
+                <li id="menu_exercise"><a href="{% url " exercise_home " %}">IP Assignments</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                <li><a href="#"> Welcome! &nbsp;&nbsp;{{ user }}</a></li>
+                <li><a href="{% url "logout" %}"><span class="glyphicon glyphicon-remove-sign"></span> Logout</a></li>
+                {% else %}
+                <li><a href="{% url "login" %}"><span class="glyphicon glyphicon-ok-sign"></span> Login</a></li>
+                {% endif %}
                 <li><a href="{% url " post_new " %}"><span class="glyphicon glyphicon-plus"></span> Add Post</a></li>
             </ul>
         </div>
@@ -75,10 +81,9 @@
             <div class="jumbotron">
                 <h5>
                     <center>
-                    Mail: zzada0520@gmail.com
-                    <br>
-                    <br>
-                    GitHub: https://github.com/DoryeongPark
+                        Mail: zzada0520@gmail.com
+                        <br>
+                        <br> GitHub: https://github.com/DoryeongPark
                     </center>
                 </h5>
             </div>

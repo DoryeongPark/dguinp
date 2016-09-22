@@ -8,5 +8,22 @@
     <a class="btn btn-default" href="{% url " post_edit " pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
     <h1>{{ post.name }}</h1>
     <p>{% autoescape off %}{{ post.class_detail }}{% endautoescape %}</p>
+
+    <hr> {% for comment in post.comment_set.all %}
+
+    <p>
+        {{ comment.author }}
+    </p>
+
+    <p>
+        {{ comment.comment }}
+    </p>
+
+     <hr>
+
+    {% endfor %}
+   
+    <a href="{% url " comment_new " post.pk %}" class="btn btn-primary">댓글달기</a>
+
 </div>
 {% endblock %}
