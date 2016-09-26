@@ -27,6 +27,9 @@ urlpatterns = [
 
     # Internet Programming Assignment - Html files
     url(r'^exercise/exercise_1$', views.exercise_1, name=' exercise_1 '),
+    url(r'^exercise/exercise_2_1$', views.exercise_2_1, name=' exercise_2_1 '),
+    url(r'^exercise/exercise_2_2$', views.exercise_2_2, name=' exercise_2_2 '),
+    url(r'^exercise/exercise_2_3$', views.exercise_2_3, name=' exercise_2_3 '),
 
 ]
 

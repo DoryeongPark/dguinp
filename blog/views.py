@@ -33,6 +33,15 @@ def exercise_home(request):
 def exercise_1(request):
     return render(request, 'exercise/exercise1.html')
 
+def exercise_2_1(request):
+    return render(request, 'exercise/exercise_2_1.html')
+
+def exercise_2_2(request):
+    return render(request, 'exercise/exercise_2_2.html')
+
+def exercise_2_3(request):
+    return render(request, 'exercise/exercise_2_3.html')
+
 def post_detail(request, pk):
     post = get_object_or_404(Detail, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
