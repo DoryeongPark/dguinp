@@ -8,7 +8,7 @@ class PostForm(forms.ModelForm):
     #detail = summer_fields.SummernoteTextFormField(error_messages=detail_error)
     class Meta:
         model = Detail
-        fields = ('name','issue','class_detail','file')
+        fields = ('name','issue','class_detail')
         widgets = {
             'summernote': SummernoteWidget(),
             'summernoteinplace': SummernoteInplaceWidget(),
