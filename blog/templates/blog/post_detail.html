@@ -6,7 +6,9 @@
     </div>
     {% endif %}
     <a class="btn btn-default" href="{% url " post_edit " pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    <h1>{{ post.name }}</h1>
+    <h3>{{ post.name }}</h3>
+    <hr>
+    <br>
     <p>{% autoescape off %}{{ post.class_detail }}{% endautoescape %}</p>
     <hr> {% for comment in post.comment_set.all %}
     <p>
