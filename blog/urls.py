@@ -10,6 +10,9 @@ urlpatterns = [
     url(r'^post/(?P<pk>[0-9]+)/comment/new/$', views.comment_new, name=' comment_new '),
     url(r'^accounts/', include('django.contrib.auth.urls')),
 
+    #html/css
+    url(r'^htmlcss/$', views.htmlcss_home, name=' htmlcss_home '),
+
     # C++
     url(r'^cpp/$', views.cpp_home, name=' cpp_home '),
 
@@ -21,15 +24,6 @@ urlpatterns = [
 
     # Python
     url(r'^py/$', views.py_home, name=' py_home '),
-
-    # Internet Programming Assignment - List
-    url(r'^exercise/$', views.exercise_home, name=' exercise_home '),
-
-    # Internet Programming Assignment - Html files
-    url(r'^exercise/exercise_1$', views.exercise_1, name=' exercise_1 '),
-    url(r'^exercise/exercise_2_1$', views.exercise_2_1, name=' exercise_2_1 '),
-    url(r'^exercise/exercise_2_2$', views.exercise_2_2, name=' exercise_2_2 '),
-    url(r'^exercise/exercise_2_3$', views.exercise_2_3, name=' exercise_2_3 '),
 
 ]
 

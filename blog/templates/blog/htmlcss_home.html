@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %} {% block content %}
+
+<h2>HTML/CSS 기초</h2>
+
+        <table class="table table-hover">
+            <tr>
+                {% for post in posts %}
+                    <tr>
+                        <div class="list_component">
+                            <td><a href="{% url ' post_detail ' pk=post.pk %}">{{ post.name }}</a>
+                                <div class="date">
+                                    {{ post.published_date }}
+                                </div>
+                            </td>
+                        </div>
+                    </tr>
+                    {% endfor %}
+            </tr>
+        </table>
+
+{% endblock %}

@@ -11,6 +11,10 @@ def redirect_home(request):
 def home(request):
     return render(request, 'blog/home.html')
 
+def htmlcss_home(request):
+    posts = Detail.objects.filter(issue="htmlcss").order_by('published_date')
+    return render(request, 'blog/htmlcss_home.html', {'posts' : posts})
+
 def cpp_home(request):
     posts = Detail.objects.filter(issue="cpp").order_by('published_date')
     return render(request, 'blog/cpp_home.html', {'posts' : posts})
@@ -26,21 +30,6 @@ def cs_home(request):
 def py_home(request):
     posts = Detail.objects.filter(issue="py").order_by('published_date')
     return render(request, 'blog/py_home.html', {'posts': posts})
-
-def exercise_home(request):
-    return render(request, 'blog/exercise_home.html')
-
-def exercise_1(request):
-    return render(request, 'exercise/exercise1.html')
-
-def exercise_2_1(request):
-    return render(request, 'exercise/exercise_2_1.html')
-
-def exercise_2_2(request):
-    return render(request, 'exercise/exercise_2_2.html')
-
-def exercise_2_3(request):
-    return render(request, 'exercise/exercise_2_3.html')
 
 def post_detail(request, pk):
     post = get_object_or_404(Detail, pk=pk)

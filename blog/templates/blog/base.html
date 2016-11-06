@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Doryeong Park's IT Blog</title>
+    <title>Doryeong Park's Blog</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
@@ -16,15 +16,15 @@
                 var url = $(location).attr('href');
                 if (~url.indexOf('cpp')) {
                     $("#menu_cpp").addClass("active");
+                } else if (~url.indexOf('htmlcss')) {
+                    $("#menu_htmlcss").addClass("active");
                 } else if (~url.indexOf('java')) {
                     $("#menu_java").addClass("active");
                 } else if (~url.indexOf('cs')) {
                     $("#menu_cs").addClass("active");
                 } else if (~url.indexOf('py')) {
                     $("#menu_py").addClass("active");
-                } else if (~url.indexOf('exercise')) {
-                    $("#menu_exercise").addClass("active");
-                } else if (~url.indexOf('home')) {
+                }else if (~url.indexOf('home')) {
                     $("#menu_home").addClass("active");
                 }
             }
@@ -41,11 +41,11 @@
             </div>
             <ul class="nav navbar-nav">
                 <li id="menu_home"><a href="{% url " home " %}">Home</a></li>
+                <li id="menu_htmlcss"><a href="{% url " htmlcss_home " %}">HTML/CSS</a></li>
                 <li id="menu_cpp"><a href="{% url " cpp_home " %}">C++</a></li>
                 <li id="menu_java"><a href="{% url " java_home " %}">Java</a></li>
                 <li id="menu_cs"><a href="{% url " cs_home " %}">C#</a></li>
                 <li id="menu_py"><a href="{% url " py_home " %}">Python</a></li>
-                <li id="menu_exercise"><a href="{% url " exercise_home " %}">IP Assignments</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
