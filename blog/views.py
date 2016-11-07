@@ -35,11 +35,21 @@ def post_detail(request, pk):
     post = get_object_or_404(Detail, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
+# Views for HTML Examples 
 def background_example(request):
     return render(request, 'blog/example/background_example.html')
 
 def image_example(request):
     return render(request, 'blog/example/image_example.html')
+
+def frame_example1(request):
+    return render(request, 'blog/example/frame_example1.html')
+
+def frame_example2(request):
+    return render(request, 'blog/example/frame_example2.html')
+
+def frame_example3(request):
+    return render(request, 'blog/example/frame_example3.html')
 
 @login_required(login_url='admin:login')
 def post_new(request):
