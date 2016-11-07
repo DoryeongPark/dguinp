@@ -38,6 +38,9 @@ def post_detail(request, pk):
 def background_example(request):
     return render(request, 'blog/example/background_example.html')
 
+def image_example(request):
+    return render(request, 'blog/example/image_example.html')
+
 @login_required(login_url='admin:login')
 def post_new(request):
     if request.method == 'POST':

@@ -15,6 +15,7 @@ urlpatterns = [
 
     #html examples
     url(r'^htmlcss/background_example/', views.background_example, name=' background_example '),
+    url(r'^htmlcss/image_example/', views.image_example, name= ' image_example '),
 
     # C++
     url(r'^cpp/$', views.cpp_home, name=' cpp_home '),
