@@ -1,5 +1,5 @@
 {% extends 'blog/base.html' %} {% block content %}
-<h1>New post</h1>
+<h3>포스트 작성</h3>
 <form method="POST" class="post-form">{% csrf_token %} {{ form|safe }}
     <button type="submit" class="save btn btn-default">Save</button>
 </form>
