@@ -35,6 +35,9 @@ def post_detail(request, pk):
     post = get_object_or_404(Detail, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
+def background_example(request):
+    return render(request, 'blog/example/background_example.html')
+
 @login_required(login_url='admin:login')
 def post_new(request):
     if request.method == 'POST':

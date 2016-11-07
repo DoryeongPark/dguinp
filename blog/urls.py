@@ -13,6 +13,9 @@ urlpatterns = [
     #html/css
     url(r'^htmlcss/$', views.htmlcss_home, name=' htmlcss_home '),
 
+    #html examples
+    url(r'^htmlcss/background_example/', views.background_example, name=' background_example '),
+
     # C++
     url(r'^cpp/$', views.cpp_home, name=' cpp_home '),
 
@@ -24,6 +27,7 @@ urlpatterns = [
 
     # Python
     url(r'^py/$', views.py_home, name=' py_home '),
+
 
 ]
 
