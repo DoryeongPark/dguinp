@@ -17,8 +17,8 @@ urlpatterns = [
     url(r'^htmlcss/background_example/', views.background_example, name=' background_example '),
     url(r'^htmlcss/image_example/', views.image_example, name= ' image_example '),
     url(r'^htmlcss/frame_example1/', views.frame_example1, name=' frame_example1 '),
-    url(r'^htmlcss/frame_example2/', views.frame_example1, name=' frame_example2 '),
-    url(r'^htmlcss/frame_example3/', views.frame_example1, name=' frame_example3 '),
+    url(r'^htmlcss/frame_example2/', views.frame_example2, name=' frame_example2 '),
+    url(r'^htmlcss/frame_example3/', views.frame_example3, name=' frame_example3 '),
 
     # C++
     url(r'^cpp/$', views.cpp_home, name=' cpp_home '),
