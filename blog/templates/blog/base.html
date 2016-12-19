@@ -24,7 +24,7 @@
                     $("#menu_cs").addClass("active");
                 } else if (~url.indexOf('py')) {
                     $("#menu_py").addClass("active");
-                }else if (~url.indexOf('home')) {
+                } else if (~url.indexOf('home')) {
                     $("#menu_home").addClass("active");
                 }
             }
@@ -46,15 +46,16 @@
                 <li id="menu_java"><a href="{% url " java_home " %}">Java</a></li>
                 <li id="menu_cs"><a href="{% url " cs_home " %}">C#</a></li>
                 <li id="menu_py"><a href="{% url " py_home " %}">Python</a></li>
+                <li id="menu_js"><a href="{% url ' js_home ' %}">Internet Programming</a></li>"
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                 <li><a href="#"> Welcome! &nbsp;&nbsp;{{ user }}</a></li>
-                <li><a href="{% url "logout" %}"><span class="glyphicon glyphicon-remove-sign"></span> Logout</a></li>
+                <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-remove-sign"></span> Logout</a></li>
                 {% else %}
-                <li><a href="{% url "login" %}"><span class="glyphicon glyphicon-ok-sign"></span> Login</a></li>
+                <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-ok-sign"></span> Login</a></li>
                 {% endif %}
-                <li><a href="{% url " post_new " %}"><span class="glyphicon glyphicon-plus"></span> Add Post</a></li>
+                <li><a href="{% url ' post_new ' %}"><span class="glyphicon glyphicon-plus"></span> Add Post</a></li>
             </ul>
         </div>
     </nav>
@@ -71,24 +72,24 @@
         </div>
     </div>
 
-<hr>
+    <hr>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12 blog-bottom">
-            <div class="jumbotron">
-                <h5>
-                    <center>
-                        Mail: zzada0520@gmail.com
-                        <br>
-                        <br> <a href="https://github.com/DoryeongPark"> GitHub: https://github.com/DoryeongPark </a>
-                    </center>
-                </h5>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 blog-bottom">
+                <div class="jumbotron">
+                    <h5>
+                        <center>
+                            Mail: zzada0520@gmail.com
+                            <br>
+                            <br> <a href="https://github.com/DoryeongPark"> GitHub: https://github.com/DoryeongPark </a>
+                        </center>
+                    </h5>
+                </div>
             </div>
         </div>
-    </div>
 
-</div>
+    </div>
 </body>
 
 </html>

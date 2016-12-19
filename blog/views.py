@@ -51,6 +51,10 @@ def frame_example2(request):
 def frame_example3(request):
     return render(request, 'blog/example/frame_example3.html')
 
+# View for Javascript page
+def js_home(request):
+    return render(request, 'blog/js_home.html')
+
 @login_required(login_url='admin:login')
 def post_new(request):
     if request.method == 'POST':

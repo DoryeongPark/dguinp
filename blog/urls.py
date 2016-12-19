@@ -32,6 +32,7 @@ urlpatterns = [
     # Python
     url(r'^py/$', views.py_home, name=' py_home '),
 
-
+    # JS Assignment
+    url(r'^js/$', views.js_home, name=' js_home ')
 ]
 
