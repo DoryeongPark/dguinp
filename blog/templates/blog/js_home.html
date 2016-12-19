@@ -1,4 +1,150 @@
 {% extends "blog/base.html" %}{% block content %}
-<h2>Javascript 과제 수행을 위한 임시 페이지입니다.</h2>
 
+<script>
+    $("body").css({
+        "background": "linear-gradient(#8CCFFF, #FFFFFF)"
+    });
+</script>
+
+
+<h2>Javascript 과제 수행을 위한 임시 페이지입니다.</h2>
+<br>
+<hr><br>
+<button class="btn btn-primary" id="btn_start">열기</button>
+<div id="layer">
+    <h4>Up & Down Game</h4> 1 ~ 100 사이의 숫자를 입력하세요.<br>
+    <button class="btn btn-success" id="btn_prompt" style="margin-top:10px;">프롬프트 값으로 입력하기</button>
+    <button class="btn btn-success" id="btn_textbox" style="margin-top:10px">텍스트 박스 값으로 입력하기</button><br>
+    <input type="text" id="textbox" size="50" style="margin-top:10px;">
+    <div id="result_sum"></div>
+    <center>
+        <div id="result" style="font-size:70;margin-top:10px">0
+            < ? < 101 </center>
+
+        </div>
+    </center>
+
+</div>
+
+<div id="layer_child"></div>
+
+<div id="blank"></div>
+
+<script>
+    var isShowing = false;
+    var isFinished = false;
+    var randomNumber = Math.random() * 99 + 1;
+    randomNumber = Math.ceil(randomNumber);
+    alert(randomNumber);
+
+    var minRange = 0;
+    var maxRange = 101;
+
+    $("#blank").css({
+        "width": "100%",
+        "height": "400",
+        "display": "none"
+    });
+
+    $("#layer").css({
+        "background-color": "white",
+        "position": "absolute",
+        "top": "170",
+        "left": "0",
+        "width": "100%",
+        "height": "400",
+        "display": "none",
+        "margin": "20",
+        "border": "1px solid black",
+        "padding": "20px",
+        "border-radius": "25px",
+        "z-index": "1"
+    });
+
+
+    $("#layer_child").css({
+        "background-color": "yellow",
+        "position": "absolute",
+        "top": "170",
+        "left": "510",
+        "width": "200",
+        "height": "60",
+        "z-index": "2",
+        "border": "1px solid black",
+        "border-radius": "10px",
+        "margin": "40",
+        "padding": "20",
+        "text-align": "center",
+        "z-index": "0",
+        "display": "none"
+    });
+
+
+    function makeDesicion(number) {
+
+        if (isFinished) {
+            alert("게임이 끝났습니다.");
+            return;
+        }
+
+        if (number >= maxRange || number <= minRange) {
+            alert("범위에 알맞는 값을 입력해 주세요");
+            return;
+        }
+
+        if (number < randomNumber) {
+            minRange = number;
+            $("#result").html("<font color='red'>" + minRange + "</font> &lt; ? &lt; " + maxRange);
+            var sum = 0;
+            minRange *= 1;
+            maxRange *= 1;
+            for (var i = minRange + 1; i < maxRange; ++i)
+                sum += i;
+            $("#result_sum").text("해당 범위 수의 총 합은 " + sum + "입니다.");
+
+        } else if (number > randomNumber) {
+            maxRange = number;
+            $("#result").html(minRange + " &lt; ? &lt; " + "<font color='red'>" + maxRange + "</font>");
+
+            var sum = 0;
+            minRange *= 1;
+            maxRange *= 1;
+            var value = minRange + 1;
+            do {
+                if (value == maxRange)
+                    break;
+                sum += value;
+            } while (value++ < maxRange);
+            $("#result_sum").text("해당 범위 수의 총 합은 " + sum + "입니다.");
+        } else {
+            confirm("랜덤 숫자를 맞췄습니다. - " + randomNumber);
+            $("#layer_child").css({
+                "z-index": "2"
+            }).html("<b>축하합니다!</b>").show();
+            isFinished = true;
+        }
+    }
+
+    $("#btn_start").click(function() {
+        $("#blank").fadeToggle("slow");
+        $("#layer").fadeToggle("slow");
+        if (isShowing) {
+            $(this).text("열기");
+            isShowing = false;
+        } else {
+            $(this).text("숨기기");
+            isShowing = true;
+        }
+    });
+
+    $("#btn_prompt").click(function() {
+        var input = prompt("값을 입력하세요");
+        makeDesicion(input);
+    });
+
+    $("#btn_textbox").click(function() {
+        var input = $("#textbox").val();
+        makeDesicion(input);
+    });
+</script>
 {% endblock %}
